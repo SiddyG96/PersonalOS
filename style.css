@@ -1,0 +1,14 @@
+.closeButton {
+    color: red;
+    text-shadow: brown;
+    font-size: 20px;
+    font-weight: bolder;
+
+}
+
+.openButton {
+    color: green;
+    text-shadow: lightgreen;
+    font-size: 20px;
+    font-weight: bold;
+}

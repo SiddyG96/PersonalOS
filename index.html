@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<head>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body style="background-color: rgb(35, 27, 27); color: white; background-image: url(Lowkey\(2\)\ \(third\ times\ the\ charm\).jpg); font-family: 'Courier New', Courier, monospace;">
+   <div id="window" style="border: solid; width:520px; padding: 16px; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); background-color: black;">
+
+<!--Welcome screen window-->
+    <div id="welcome" style="user-select: none; cursor: move; width: calc(100% + 32px); height:40px; background-color: grey; text-align: 
+    center; line-height: 30px; color: white; font-weight: bold; border-bottom: 1px solid black; margin: -16px -16px ;">
+        <p id="welcomeheader">Drag here</p>
+    </div>
+
+    <p class="closeButton" style="cursor: pointer;" id="welcomeclose">X</p>
+    <img src="pfp.png" alt="pfp" style="width: 128px; border-radius: 50%;">
+        <h1>SidOS</h1>
+        <p style>This project has been made as a part of the HackClub Stardance Challenge. I hope you enjoy it.</p>
+
+     <h2 style="color: yellow;">My Hobbies</h2>
+
+        <p>I like to do STEM, cooking, hiking, and music. My name is Sid, and this OS is essentially a presentation of myself. Enjoy!
+        </p><br>
+
+    <a style="color: blanchedalmond;" href="https://www.instagram.com/starthackclub/">HackClub Instagram Account</a><br>
+</div>
+
+<!--menubar content-->
+<div style="justify-content: space-between; position: absolute; width: 100%; display: flex; backdrop-filter: blur(10px); 
+background-color: rgba(0, 0, 0, 0.25); color: #fff; justify-content: space-between;">
+ <p class="openButton" style="cursor: pointer; text-align: right;" id="welcomeopen">OPEN WS</p>
+    <p id="timeteller" style="color: yellow; border: 5px;"></p>
+  
+</div>
+
+<!--Time on menu bar-->
+<script>
+    function updateTime() {
+    var currentTime = new Date().toLocaleString();
+    var timeText = document.querySelector("#timeteller")
+    timeText.innerHTML = currentTime
+}
+setInterval(updateTime, 1000)
+</script>
+
+
+<!--Desktop App #1-->
+<div class="window" id="Mini-Portfolio" style="top: calc(50% - 90px); left: calc(50% - 180px);">
+
+<div id="desktopApps" style="padding-top: 64px; padding-left: 16px;">
+    <div class="appIcon" style="border: 2px solid green; border-radius: 8px; padding: 4px; cursor: pointer;">
+        <div style="text-align: center; padding: 16px; filter: drop-shadow(0 0 8px black); width: fit-content">
+            <img src="mp icon.png" alt="MPICON" style="width: 64px; height: 64px; border-radius: 16px;">
+            <p style="color: rgb(236, 225, 225); margin: 0px;">Mini-Portfolio</p>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Portfolio App screen window -->
+<div id="window2" style="border: solid; width:520px; padding: 16px; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); background-color: brown;">
+    <div id="window2header" style="user-select: none; cursor: move; width: 100%; height:40px; background-color: green; text-align: center; line-height: 40px; color: white; font-weight: bold; border-bottom: 1px solid black;">
+        Drag here
+    </div>
+    <p>TEXT FOR APP GOES HERE</p>
+</div>
+
+<!--Linking JS file-->
+<script src="script.js"></script>
+
+</body>
+</html>
