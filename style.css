@@ -12,3 +12,11 @@
     font-size: 20px;
     font-weight: bold;
 }
+
+.appIcon.selected {
+    border: 2px solid black;
+    border-radius: 14px;
+    padding: 10px;
+    width: 120px;
+    height: 120px;
+}

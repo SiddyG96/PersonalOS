@@ -27,7 +27,7 @@
 </div>
 
 <!--menubar content-->
-<div style="justify-content: space-between; position: absolute; width: 100%; display: flex; backdrop-filter: blur(10px); 
+<div id="top" style="justify-content: space-between; position: absolute; width: 100%; display: flex; backdrop-filter: blur(10px); 
 background-color: rgba(0, 0, 0, 0.25); color: #fff; justify-content: space-between;">
  <p class="openButton" style="cursor: pointer; text-align: right;" id="welcomeopen">OPEN WS</p>
     <p id="timeteller" style="color: yellow; border: 5px;"></p>
@@ -45,11 +45,10 @@ setInterval(updateTime, 1000)
 </script>
 
 
-<!--Desktop App #1-->
+<!--Mini-Portfolio App Icon-->
 <div class="window" id="Mini-Portfolio" style="top: calc(50% - 90px); left: calc(50% - 180px);">
-
-<div id="desktopApps" style="padding-top: 64px; padding-left: 16px;">
-    <div class="appIcon" style="border: 2px solid green; border-radius: 8px; padding: 4px; cursor: pointer;">
+<div class="desktopApps" style="padding-top: 64px; padding-left: 16px;">
+    <div class="appIcon" style="padding: 4px; cursor: pointer;" onclick="handleAppClick(this, 'window2')">
         <div style="text-align: center; padding: 16px; filter: drop-shadow(0 0 8px black); width: fit-content">
             <img src="mp icon.png" alt="MPICON" style="width: 64px; height: 64px; border-radius: 16px;">
             <p style="color: rgb(236, 225, 225); margin: 0px;">Mini-Portfolio</p>
@@ -58,16 +57,47 @@ setInterval(updateTime, 1000)
 </div>
 </div>
 
+<!--Pong App Icon-->
+<div class="window" id="Pong" style="top: calc(50% - 90px); left: calc(50% - 180px);">
+<div class="desktopApps" style="padding-top: 64px; padding-left: 16px;">
+    <div class="appIcon" style="padding: 4px; cursor: pointer;" onclick="handleAppClick(this, 'window3')">
+        <div style="text-align: center; padding: 16px; filter: drop-shadow(0 0 8px black); width: fit-content">
+            <img src="pong icon.png" alt="pong icon" style="width:64px; height:64px; border-radius: 16px;">
+            <p style="color: rgb(236, 225, 225); margin: 0px;">Pong</p>
+        </div>
+    </div>
+</div>
+</div>
+
 <!-- Portfolio App screen window -->
-<div id="window2" style="border: solid; width:520px; padding: 16px; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); background-color: brown;">
+<div id="window2" style="border: solid; width:620px; padding: 16px; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); background-color: brown; display: none;">
     <div id="window2header" style="user-select: none; cursor: move; width: 100%; height:40px; background-color: green; text-align: center; line-height: 40px; color: white; font-weight: bold; border-bottom: 1px solid black;">
         Drag here
     </div>
-    <p>TEXT FOR APP GOES HERE</p>
+    <p class="closeButton" style="cursor: pointer;" id="window2close">X</p>
+    <div id="window2topbar" style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid black; margin-bottom: 12px;">
+    </div>
+    <div id="window2content"></div>
 </div>
+
+<!-- Pong App screen window -->
+<div id="window3" style="border: solid; width:620px; height:620px; padding: 16px; position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); background-color: brown; display: none;">
+    <div id="window3header" style="user-select: none; cursor: move; width: 100%; height:40px; background-color: green; text-align: center; line-height: 40px; color: white; font-weight: bold; border-bottom: 1px solid black;">
+        Drag here
+    </div>
+    <p class="closeButton" style="cursor: pointer;" id="window3close">X</p>
+    <div id="window3content">
+        <p>Get 11 to win. Good Luck!</p>
+    </div>
+</div>
+
+
+
+
 
 <!--Linking JS file-->
 <script src="script.js"></script>
+<script src="pong.js"></script>
 
 </body>
 </html>
