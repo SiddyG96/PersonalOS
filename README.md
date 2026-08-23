@@ -1,4 +1,4 @@
-# PersonalOS
+# SidOS
 
 **Welcome to Sid OS**
 SidOS is a personal web operating system designed to display my hobbies, aspirations, and interests, as well as one more misc app.
