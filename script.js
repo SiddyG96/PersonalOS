@@ -86,14 +86,14 @@ function handleAppClick(iconElement, windowId) {
 
     if (iconElement.classList.contains("selected")) {
         deselectIcon(iconElement);
-        if(targetWindow) {
-        openWindow(targetWindow);
-        }
     } else {
         if(selectedIcon && selectedIcon !== iconElement) {
             deselectIcon(selectedIcon);
         }
         selectIcon(iconElement);
+        if(targetWindow) {
+            openWindow(targetWindow);
+        }
     }
 }
 
