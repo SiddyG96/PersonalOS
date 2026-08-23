@@ -44,6 +44,8 @@ function dragElement(element) {
 }
 
 var selectedIcon = undefined;
+let savedTop = "50%";
+let savedLeft = "50%";
 
 function handleAppClick(iconElement, windowId) {
     var targetWindow = document.getElementById(windowId);
@@ -150,9 +152,9 @@ document.addEventListener("DOMContentLoaded", function() {
     var windowElement = document.querySelector("#window");
     var window2Element = document.querySelector("#window2");
 
-    //Logic used from AI for saving the position of the window when closed and restoring it when opened (savedTop/savedLeft variables)
-    let savedTop = windowElement.style.top || "50%";
-    let savedLeft = windowElement.style.left || "50%";
+    // Initialize saved position from welcome window
+    savedTop = windowElement.style.top || "50%";
+    savedLeft = windowElement.style.left || "50%";
 
     var welcomeScreenClose = document.querySelector("#welcomeclose");
     var welcomeScreenOpen = document.querySelector("#welcomeopen");
