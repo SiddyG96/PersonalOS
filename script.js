@@ -1,6 +1,3 @@
-dragElement(document.getElementById("window"));
-dragElement(document.getElementById("window2"));
-dragElement(document.getElementById("window3"));
 function dragElement(element) {
 
     var initialX = 0;
@@ -43,41 +40,8 @@ function dragElement(element) {
         document.onmouseup = null;
         document.onmousemove = null;
     }
-
     
 }
-
-var windowElement = document.querySelector("#window");
-var window2Element = document.querySelector("#window2");
-
-//Logic used from AI for saving the position of the window when closed and restoring it when opened (savedTop/savedLeft variables)
-let savedTop = windowElement.style.top || "50%";
-let savedLeft = windowElement.style.left || "50%";
-
-
-function closeWindow(element) {
-    savedTop = element.style.top || "50%";
-    savedLeft = element.style.left || "50%";
-    element.style.display = "none";
-}
-
-function openWindow(element) {
-    element.style.display = "block";
-    element.style.top = savedTop;
-    element.style.left = savedLeft;
-}
-
-var welcomeScreenClose = document.querySelector("#welcomeclose");
-var welcomeScreenOpen = document.querySelector("#welcomeopen");
-
-welcomeScreenClose.addEventListener("click", function() {
-    closeWindow(windowElement);
-  });
-  
-  welcomeScreenOpen.addEventListener("click", function() {
-    openWindow(windowElement);
-  });
-
 
 var selectedIcon = undefined;
 
@@ -105,18 +69,6 @@ function selectIcon(element) {
 function deselectIcon(element) {
     element.classList.remove("selected");
     selectedIcon = undefined;
-}
-
-var window2Close = document.querySelector("#window2close");
-window2Close.addEventListener("click", function () {
-    closeWindow(window2Element);
-});
-
-var window3Close = document.querySelector("#window3close");
-if(window3Close) {
-window3Close.addEventListener("click", function () {
-    closeWindow(document.getElementById("window3"));
-});
 }
 
 var portfolioContent = [
@@ -150,9 +102,9 @@ var portfolioContent = [
         content: `<h2 style="color: purple;" >Aspirations and a Soliloquy</h2>
         <p>I want to make my future the best it can be. My definition of this is quite different compared to some of my peers. Of course, there is the basic, "I  want to be successful"
          or "I want to build something". But that isn't all for me. I really want to see my past self and see how much I have changed. Good or bad, this will help me make thoughtful and caring decisions.
-          So far, STEM has made me see how much competition is in the world, and I hope that though doesn't take over people's minds. Ego is one thing, but another thing; an unhealthy competition,
-           can negatively affect you. Comparing yourself to others is the death of peace. Peace helps focus, and wasting your mental power either comparing yourself to others, or constantly asking yourself,
-            "What do I have that is better than them?" is not good for you. Anyways, that was enough rambling, and I hope you enjoy the rest of my OS.</p>`
+           So far, STEM has made me see how much competition is in the world, and I hope that though doesn't take over people's minds. Ego is one thing, but another thing; an unhealthy competition,
+            can negatively affect you. Comparing yourself to others is the death of peace. Peace helps focus, and wasting your mental power either comparing yourself to others, or constantly asking yourself,
+             "What do I have that is better than them?" is not good for you. Anyways, that was enough rambling, and I hope you enjoy the rest of my OS.</p>`
     }
 ];
 
@@ -177,8 +129,56 @@ function addToTopBar(index) {
     topBar.appendChild(newItem);
 }
 
-for (let i = 0; i < portfolioContent.length; i++) {
-    addToTopBar(i);
-}
+document.addEventListener("DOMContentLoaded", function() {
+    dragElement(document.getElementById("window"));
+    dragElement(document.getElementById("window2"));
+    dragElement(document.getElementById("window3"));
 
-setWindow2Content(0);
+    var windowElement = document.querySelector("#window");
+    var window2Element = document.querySelector("#window2");
+
+    //Logic used from AI for saving the position of the window when closed and restoring it when opened (savedTop/savedLeft variables)
+    let savedTop = windowElement.style.top || "50%";
+    let savedLeft = windowElement.style.left || "50%";
+
+    function closeWindow(element) {
+        savedTop = element.style.top || "50%";
+        savedLeft = element.style.left || "50%";
+        element.style.display = "none";
+    }
+
+    function openWindow(element) {
+        element.style.display = "block";
+        element.style.top = savedTop;
+        element.style.left = savedLeft;
+    }
+
+    var welcomeScreenClose = document.querySelector("#welcomeclose");
+    var welcomeScreenOpen = document.querySelector("#welcomeopen");
+
+    welcomeScreenClose.addEventListener("click", function() {
+        closeWindow(windowElement);
+    });
+    
+    welcomeScreenOpen.addEventListener("click", function() {
+        openWindow(windowElement);
+    });
+
+    var window2Close = document.querySelector("#window2close");
+    window2Close.addEventListener("click", function () {
+        closeWindow(window2Element);
+    });
+
+    var window3Close = document.querySelector("#window3close");
+    if(window3Close) {
+        window3Close.addEventListener("click", function () {
+            closeWindow(document.getElementById("window3"));
+        });
+    }
+
+    for (let i = 0; i < portfolioContent.length; i++) {
+        addToTopBar(i);
+    }
+
+    setWindow2Content(0);
+});
