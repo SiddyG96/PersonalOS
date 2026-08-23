@@ -71,6 +71,19 @@ function deselectIcon(element) {
     selectedIcon = undefined;
 }
 
+// Global functions for inline onclick handlers
+function closeWindow(element) {
+    savedTop = element.style.top || "50%";
+    savedLeft = element.style.left || "50%";
+    element.style.display = "none";
+}
+
+function openWindow(element) {
+    element.style.display = "block";
+    element.style.top = savedTop;
+    element.style.left = savedLeft;
+}
+
 var portfolioContent = [
     {
 
@@ -140,18 +153,6 @@ document.addEventListener("DOMContentLoaded", function() {
     //Logic used from AI for saving the position of the window when closed and restoring it when opened (savedTop/savedLeft variables)
     let savedTop = windowElement.style.top || "50%";
     let savedLeft = windowElement.style.left || "50%";
-
-    function closeWindow(element) {
-        savedTop = element.style.top || "50%";
-        savedLeft = element.style.left || "50%";
-        element.style.display = "none";
-    }
-
-    function openWindow(element) {
-        element.style.display = "block";
-        element.style.top = savedTop;
-        element.style.left = savedLeft;
-    }
 
     var welcomeScreenClose = document.querySelector("#welcomeclose");
     var welcomeScreenOpen = document.querySelector("#welcomeopen");
